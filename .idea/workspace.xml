@@ -5,26 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="764652b1-ad4a-44d7-ba50-96b7da548125" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/auth-service/task-platform.auth-service.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/task-service/task-platform.task-service.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/main1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/test/test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task-service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task-service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task-service/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task-service/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task-service/src/main/main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task-service/src/test/test1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +104,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776801158236</updated>
-      <workItem from="1776801159292" duration="1358000" />
+      <workItem from="1776801159292" duration="1728000" />
     </task>
     <servers />
   </component>
