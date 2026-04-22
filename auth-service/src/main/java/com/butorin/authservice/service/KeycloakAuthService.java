@@ -30,7 +30,7 @@ public class KeycloakAuthService {
         WebClient webClient = webClientBuilder.build();
 
         TokenResponse response = webClient.post()
-                .uri(keycloakProperties.getAuthServerUrl() + "/realms/master/protocol/openid-connect/token")
+                .uri("%s/realms/master/protocol/openid-connect/token".formatted(keycloakProperties.getAuthServerUrl()))
                 .header("Content-Type", "application/x-www-form-urlencoded")
                 .bodyValue("client_id=admin-cli&username=admin&password=admin&grant_type=password")
                 .retrieve()
@@ -49,7 +49,7 @@ public class KeycloakAuthService {
         userRequest.setEnabled(true);
         userRequest.setFirstName("User");
         userRequest.setLastName("Test");
-        userRequest.setEmail(username + "@test.com");
+        userRequest.setEmail("%s@test.com".formatted(username));
         userRequest.setCredentials(List.of(
                 new KeycloakUserRequest.Credential("password", password, false)
         ));
@@ -58,9 +58,9 @@ public class KeycloakAuthService {
             String userJson = objectMapper.writeValueAsString(userRequest);
 
             webClient.post()
-                    .uri(keycloakProperties.getAuthServerUrl() + "/admin/realms/" + keycloakProperties.getRealm() + "/users")
+                    .uri("%s/admin/realms/%s/users".formatted(keycloakProperties.getAuthServerUrl(), keycloakProperties.getRealm()))
                     .header("Content-Type", "application/json")
-                    .header("Authorization", "Bearer " + adminToken)
+                    .header("Authorization", "Bearer %s".formatted(adminToken))
                     .bodyValue(userJson)
                     .retrieve()
                     .toBodilessEntity()
@@ -73,13 +73,13 @@ public class KeycloakAuthService {
     public TokenResponse loginUser(String username, String password) {
         RestTemplate restTemplate = new RestTemplate();
 
-        String url = keycloakProperties.getAuthServerUrl() + "/realms/task-realm/protocol/openid-connect/token";
+        String url = "%s/realms/task-realm/protocol/openid-connect/token".formatted(keycloakProperties.getAuthServerUrl());
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
 
-        String body = "client_id=task-client&client_secret=" + keycloakProperties.getClientSecret() +
-                "&username=" + username + "&password=" + password + "&grant_type=password";
+        String body = "client_id=task-client&client_secret=%s&username=%s&password=%s&grant_type=password"
+                .formatted(keycloakProperties.getClientSecret(), username, password);
 
         HttpEntity<String> entity = new HttpEntity<>(body, headers);
 
@@ -94,8 +94,8 @@ public class KeycloakAuthService {
         String adminToken = getAdminToken();
 
         String response = webClient.get()
-                .uri(keycloakProperties.getAuthServerUrl() + "/admin/realms/" + keycloakProperties.getRealm() + "/users?username=" + username)
-                .header("Authorization", "Bearer " + adminToken)
+                .uri("%s/admin/realms/%s/users?username=%s".formatted(keycloakProperties.getAuthServerUrl(), keycloakProperties.getRealm(), username))
+                .header("Authorization", "Bearer %s".formatted(adminToken))
                 .retrieve()
                 .bodyToMono(String.class)
                 .block();
@@ -109,6 +109,6 @@ public class KeycloakAuthService {
             throw new RuntimeException("Не удалось получить ID пользователя", e);
         }
 
-        throw new RuntimeException("Пользователь не найден: " + username);
+        throw new RuntimeException("Пользователь не найден: %s".formatted(username));
     }
 }
