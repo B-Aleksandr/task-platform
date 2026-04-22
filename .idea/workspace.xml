@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="764652b1-ad4a-44d7-ba50-96b7da548125" name="Changes" comment="Add Flyway migrations, replace properties with yml, fix Keycloak DTO">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+    <list default="true" id="764652b1-ad4a-44d7-ba50-96b7da548125" name="Changes" comment="Remove iml files and old properties">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/build/classes/java/main/com/butorin/authservice/config/AuthorizationServerConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/build/classes/java/main/com/butorin/authservice/config/AuthorizationServerConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/build/classes/java/main/com/butorin/authservice/service/KeycloakAuthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/build/classes/java/main/com/butorin/authservice/service/KeycloakAuthService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/build/libs/auth-service-0.0.1-SNAPSHOT-plain.jar" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/build/libs/auth-service-0.0.1-SNAPSHOT-plain.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/build/libs/auth-service-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/build/libs/auth-service-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/build/reports/problems/problems-report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/build/resources/main/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/build/libs/task-service-0.0.1-SNAPSHOT-plain.jar" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/build/libs/task-service-0.0.1-SNAPSHOT-plain.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/build/libs/task-service-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/build/libs/task-service-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/build/resources/main/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +112,7 @@
       <option name="presentableId" value="Default" />
       <updated>1776801158236</updated>
       <workItem from="1776801159292" duration="4615000" />
-      <workItem from="1776880186446" duration="1752000" />
+      <workItem from="1776880186446" duration="2372000" />
     </task>
     <task id="LOCAL-00001" summary="Add Flyway migrations, replace properties with yml, fix Keycloak DTO">
       <option name="closed" value="true" />
@@ -136,7 +122,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776881476525</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Remove iml files and old properties">
+      <option name="closed" value="true" />
+      <created>1776882262667</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1776882262667</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +138,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add Flyway migrations, replace properties with yml, fix Keycloak DTO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Flyway migrations, replace properties with yml, fix Keycloak DTO" />
+    <MESSAGE value="Remove iml files and old properties" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove iml files and old properties" />
   </component>
 </project>
