@@ -23,6 +23,8 @@ dependencies {
     implementation 'org.springframework.kafka:spring-kafka'
     implementation 'org.postgresql:postgresql'
     implementation 'org.projectlombok:lombok'
+    implementation 'org.flywaydb:flyway-core'
+    runtimeOnly 'org.flywaydb:flyway-database-postgresql'
     annotationProcessor 'org.projectlombok:lombok'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

@@ -1,7 +1,9 @@
 package com.butorin.authservice.service;
 
 import com.butorin.authservice.config.KeycloakProperties;
+import com.butorin.authservice.dto.KeycloakUserRequest;
 import com.butorin.authservice.dto.TokenResponse;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -14,12 +16,15 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class KeycloakAuthService {
 
     private final KeycloakProperties keycloakProperties;
     private final WebClient.Builder webClientBuilder;
+    private final ObjectMapper objectMapper;
 
     public String getAdminToken() {
         WebClient webClient = webClientBuilder.build();
@@ -37,24 +42,32 @@ public class KeycloakAuthService {
 
     public void createUser(String username, String password) {
         WebClient webClient = webClientBuilder.build();
-
         String adminToken = getAdminToken();
 
-        String userJson = String.format(
-                "{\"username\":\"%s\",\"enabled\":true,\"firstName\":\"User\",\"lastName\":\"Test\",\"email\":\"%s@test.com\",\"credentials\":[{\"type\":\"password\",\"value\":\"%s\",\"temporary\":false}]}",
-                username, username, password
-        );
+        KeycloakUserRequest userRequest = new KeycloakUserRequest();
+        userRequest.setUsername(username);
+        userRequest.setEnabled(true);
+        userRequest.setFirstName("User");
+        userRequest.setLastName("Test");
+        userRequest.setEmail(username + "@test.com");
+        userRequest.setCredentials(List.of(
+                new KeycloakUserRequest.Credential("password", password, false)
+        ));
 
-        webClient.post()
-                .uri(keycloakProperties.getAuthServerUrl() + "/admin/realms/" + keycloakProperties.getRealm() + "/users")
-                .header("Content-Type", "application/json")
-                .header("Authorization", "Bearer " + adminToken)
-                .bodyValue(userJson)
-                .retrieve()
-                .toBodilessEntity()
-                .block();
+        try {
+            String userJson = objectMapper.writeValueAsString(userRequest);
 
-
+            webClient.post()
+                    .uri(keycloakProperties.getAuthServerUrl() + "/admin/realms/" + keycloakProperties.getRealm() + "/users")
+                    .header("Content-Type", "application/json")
+                    .header("Authorization", "Bearer " + adminToken)
+                    .bodyValue(userJson)
+                    .retrieve()
+                    .toBodilessEntity()
+                    .block();
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException("Ошибка сериализации пользователя", e);
+        }
     }
 
     public TokenResponse loginUser(String username, String password) {
@@ -87,8 +100,6 @@ public class KeycloakAuthService {
                 .bodyToMono(String.class)
                 .block();
 
-        // Парсим JSON
-        ObjectMapper objectMapper = new ObjectMapper();
         try {
             JsonNode array = objectMapper.readTree(response);
             if (array.isArray() && array.size() > 0) {

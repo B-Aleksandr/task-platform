@@ -41,7 +41,7 @@ public class AuthorizationServerConfig {
     public RegisteredClientRepository registeredClientRepository() {
         RegisteredClient registeredClient = RegisteredClient.withId(UUID.randomUUID().toString())
                 .clientId("task-service-client")
-                .clientSecret("{noop}secret")
+                .clientSecret("secret")
                 .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
                 .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
                 .authorizationGrantType(AuthorizationGrantType.PASSWORD)
@@ -55,17 +55,24 @@ public class AuthorizationServerConfig {
         return new InMemoryRegisteredClientRepository(registeredClient);
     }
 
-    @Bean
-    @Order(1)
-    public SecurityFilterChain authorizationServerSecurityFilterChain(HttpSecurity http) throws Exception {
-        OAuth2AuthorizationServerConfiguration.applyDefaultSecurity(http);
-        http.getConfigurer(OAuth2AuthorizationServerConfigurer.class)
-                .oidc(Customizer.withDefaults());
-        http.exceptionHandling(exceptions -> exceptions
-                .authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/login"))
-        );
-        return http.build();
-    }
+//    @Bean
+//    @Order(1)
+//    public SecurityFilterChain authorizationServerSecurityFilterChain(HttpSecurity http) throws Exception {
+//        OAuth2AuthorizationServerConfigurer authorizationServerConfigurer = new OAuth2AuthorizationServerConfigurer();
+//        http.apply(authorizationServerConfigurer);
+//
+//        http.securityMatcher("/auth/**")
+//                .authorizeHttpRequests(auth -> auth
+//                        .anyRequest().authenticated()
+//                )
+//                .csrf(csrf -> csrf.disable());
+//
+//        http.exceptionHandling(exceptions -> exceptions
+//                .authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/login"))
+//        );
+//
+//        return http.build();
+//    }
 
     @Bean
     public JWKSource<SecurityContext> jwkSource() {
