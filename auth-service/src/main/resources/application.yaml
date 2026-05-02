@@ -24,4 +24,5 @@ keycloak:
 
 logging:
   level:
-    org.springframework.web.reactive.function.client: DEBUG
+    org.springframework.kafka: DEBUG
+    org.apache.kafka: DEBUG

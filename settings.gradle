@@ -1,2 +1,5 @@
 rootProject.name = 'task-platform'
 include 'auth-service', 'task-service'
+include 'api-gateway'
+include 'authorization-starter'
+

@@ -1,5 +1,7 @@
 package com.butorin.taskservice.controller;
 
+import com.butorin.starter.annotation.Auth;
+import com.butorin.starter.dto.AuthorizationParams;
 import com.butorin.taskservice.dto.TaskRequestDTO;
 import com.butorin.taskservice.dto.TaskResponseDTO;
 import com.butorin.taskservice.entity.Status;
@@ -18,7 +20,11 @@ public class TaskController {
     private final TaskService taskService;
 
     @GetMapping
-    public Page<TaskResponseDTO> getAllTasks(@PageableDefault(size = 10) Pageable pageable) {
+    public Page<TaskResponseDTO> getAllTasks(@Auth AuthorizationParams auth,
+                                             @PageableDefault(size = 10) Pageable pageable) {
+        System.out.println("=== User from headers ===");
+        System.out.println("User ID: " + auth.getUserId());
+        System.out.println("Roles: " + auth.getRoles());
         return taskService.getAllTasks(pageable);
     }
 

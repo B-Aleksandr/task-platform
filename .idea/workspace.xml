@@ -4,11 +4,50 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="764652b1-ad4a-44d7-ba50-96b7da548125" name="Changes" comment="Add migration's">
+    <list default="true" id="764652b1-ad4a-44d7-ba50-96b7da548125" name="Changes" comment="Refactor: replace concatenation with formatted strings in KeycloakAuthService">
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/butorin/gateway/GatewayApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/butorin/gateway/config/GatewayConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/butorin/gateway/filter/AuthFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization-starter/src/main/java/com/butorin/starter/annotation/Auth.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization-starter/src/main/java/com/butorin/starter/config/AuthAutoConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization-starter/src/main/java/com/butorin/starter/dto/AuthorizationParams.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization-starter/src/main/java/com/butorin/starter/resolver/AuthArgumentResolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization-starter/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/butorin/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/build/classes/java/main/com/butorin/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/build/classes/java/main/com/butorin/authservice/service/KafkaProducerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/build/classes/java/main/com/butorin/authservice/service/KafkaProducerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/build/classes/java/main/com/butorin/authservice/service/KeycloakAuthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/build/classes/java/main/com/butorin/authservice/service/KeycloakAuthService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/build/libs/auth-service-0.0.1-SNAPSHOT-plain.jar" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/build/libs/auth-service-0.0.1-SNAPSHOT-plain.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/build/libs/auth-service-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/build/libs/auth-service-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/butorin/authservice/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/butorin/authservice/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/butorin/authservice/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/butorin/authservice/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/butorin/authservice/service/KafkaProducerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/butorin/authservice/service/KafkaProducerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/butorin/authservice/service/KeycloakAuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/butorin/authservice/service/KeycloakAuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-service/build/classes/java/main/com/butorin/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-service/build/classes/java/main/com/butorin/taskservice/config/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-service/build/classes/java/main/com/butorin/taskservice/controller/TaskController.class" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/build/classes/java/main/com/butorin/taskservice/controller/TaskController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-service/build/classes/java/main/com/butorin/taskservice/service/KafkaProducerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/build/classes/java/main/com/butorin/taskservice/service/KafkaProducerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-service/build/libs/task-service-0.0.1-SNAPSHOT-plain.jar" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/build/libs/task-service-0.0.1-SNAPSHOT-plain.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-service/build/libs/task-service-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/build/libs/task-service-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-service/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/taskservice/TaskServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/taskservice/TaskServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/taskservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/taskservice/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/taskservice/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/taskservice/controller/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/taskservice/service/KafkaProducerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/taskservice/service/KafkaProducerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +82,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -50,6 +90,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 6
@@ -58,34 +102,103 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build task-platform.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.AuthServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.TaskServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.AuthArgumentResolverIntegrationTest.executor": "Run",
+    "Gradle.AuthControllerRegisterTest.executor": "Run",
+    "Gradle.Build task-platform.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.AuthServiceApplication.executor": "Run",
+    "Spring Boot.GatewayApplication.executor": "Run",
+    "Spring Boot.TaskServiceApplication.executor": "Run",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/Alexandr/Desktop/task-platform/authorization-starter/src/main/java/com/butorin/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Spring Boot.AuthServiceApplication">
+}]]></component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Gradle.AuthArgumentResolverIntegrationTest">
+    <configuration name="AuthArgumentResolverIntegrationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":authorization-starter:test" />
+            <option value="--tests" />
+            <option value="&quot;com.butorin.starter.resolver.AuthArgumentResolverIntegrationTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="AuthControllerRegisterTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":auth-service:test" />
+            <option value="--tests" />
+            <option value="&quot;com.butorin.authservice.controller.AuthControllerRegisterTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="AuthServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="task-platform.auth-service.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.butorin.authservice.AuthServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="task-platform.api-gateway.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.butorin.gateway.GatewayApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -97,6 +210,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.AuthArgumentResolverIntegrationTest" />
+        <item itemvalue="Gradle.AuthControllerRegisterTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -115,7 +234,9 @@
       <option name="presentableId" value="Default" />
       <updated>1776801158236</updated>
       <workItem from="1776801159292" duration="4615000" />
-      <workItem from="1776880186446" duration="3304000" />
+      <workItem from="1776880186446" duration="4057000" />
+      <workItem from="1777394501952" duration="26922000" />
+      <workItem from="1777741077157" duration="3610000" />
     </task>
     <task id="LOCAL-00001" summary="Add Flyway migrations, replace properties with yml, fix Keycloak DTO">
       <option name="closed" value="true" />
@@ -141,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776882671586</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Refactor: replace concatenation with formatted strings in KeycloakAuthService">
+      <option name="closed" value="true" />
+      <created>1776884214724</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1776884214724</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +280,7 @@
     <MESSAGE value="Add Flyway migrations, replace properties with yml, fix Keycloak DTO" />
     <MESSAGE value="Remove iml files and old properties" />
     <MESSAGE value="Add migration's" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add migration's" />
+    <MESSAGE value="Refactor: replace concatenation with formatted strings in KeycloakAuthService" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor: replace concatenation with formatted strings in KeycloakAuthService" />
   </component>
 </project>

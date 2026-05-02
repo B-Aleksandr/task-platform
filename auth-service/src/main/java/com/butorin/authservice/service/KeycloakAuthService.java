@@ -40,7 +40,7 @@ public class KeycloakAuthService {
         return response.getAccessToken();
     }
 
-    public void createUser(String username, String password) {
+    public void createUser(String username, String email, String password) {
         WebClient webClient = webClientBuilder.build();
         String adminToken = getAdminToken();
 
@@ -49,7 +49,7 @@ public class KeycloakAuthService {
         userRequest.setEnabled(true);
         userRequest.setFirstName("User");
         userRequest.setLastName("Test");
-        userRequest.setEmail("%s@test.com".formatted(username));
+        userRequest.setEmail(email);
         userRequest.setCredentials(List.of(
                 new KeycloakUserRequest.Credential("password", password, false)
         ));

@@ -1,0 +1,43 @@
+{
+  "realm": "test-realm",
+  "enabled": true,
+  "verifyEmail": false,
+  "loginWithEmailAllowed": false,
+  "resetPasswordAllowed": false,
+  "registrationAllowed": false,
+  "clients": [
+    {
+      "clientId": "test-client",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "secret": "test-secret",
+      "directAccessGrantsEnabled": true
+    }
+  ],
+  "users": [
+    {
+      "username": "test-user",
+      "enabled": true,
+      "emailVerified": true,
+      "requiredActions": [],
+      "credentials": [
+        {
+          "type": "password",
+          "value": "test-password",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "user"
+      ]
+    }
+  ],
+  "roles": {
+    "realm": [
+      {
+        "name": "user"
+      }
+    ]
+  }
+}

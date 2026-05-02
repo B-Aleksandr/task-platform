@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.butorin'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '23'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.4.4'
+    implementation 'org.projectlombok:lombok:1.18.36'
+    annotationProcessor 'org.projectlombok:lombok:1.18.36'
+
+    compileOnly 'org.springframework.boot:spring-boot-starter:3.4.4'
+    compileOnly 'org.springframework.boot:spring-boot-autoconfigure:3.4.4'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.4.4'
+    testImplementation platform('org.testcontainers:testcontainers-bom:1.20.6')
+    testImplementation 'org.testcontainers:junit-jupiter'
+    testImplementation 'org.testcontainers:testcontainers'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.withType(Jar) {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

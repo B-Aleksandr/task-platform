@@ -3,6 +3,7 @@ package com.butorin.authservice.service;
 import com.butorin.authservice.dto.TokenResponse;
 import com.butorin.authservice.dto.UserCreatedFlowEvent;
 import com.butorin.authservice.dto.UserStreamEvent;
+import com.butorin.authservice.exception.DuplicateEmailException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,14 +16,18 @@ public class AuthService {
     private final KeycloakAuthService keycloakAuthService;
     private final KafkaProducerService kafkaProducerService;
 
-    public String register(String username, String password) {
-        keycloakAuthService.createUser(username, password);
+    public String register(String username, String email, String password) {
+        try {
+            keycloakAuthService.createUser(username, email, password);
+        } catch (RuntimeException exception) {
+            throw new DuplicateEmailException("Email already exists: " + email);
+        }
         String userIdByUsername = keycloakAuthService.getUserIdByUsername(username);
 
         UserStreamEvent userStreamEvent = new UserStreamEvent();
         userStreamEvent.setId(userIdByUsername);
         userStreamEvent.setName(username);
-        userStreamEvent.setEmail(username);
+        userStreamEvent.setEmail(email);
         userStreamEvent.setEventTime(LocalDateTime.now());
         kafkaProducerService.sendUserStreamEvent(userStreamEvent);
 

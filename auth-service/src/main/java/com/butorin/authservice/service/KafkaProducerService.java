@@ -21,18 +21,20 @@ public class KafkaProducerService {
     public void sendUserStreamEvent(UserStreamEvent event) {
         try {
             String message = objectMapper.writeValueAsString(event);
+            System.out.println("=== ОТПРАВЛЕНО В user-stream === Сообщение: " + message);
             kafkaTemplate.send(USER_STREAM_TOPIC, message);
         } catch (JsonProcessingException e) {
-            throw new RuntimeException("Возникла ошибка при отправке события создания задачи",e);
+            throw new RuntimeException("Возникла ошибка при отправке события регистрации пользователя",e);
         }
     }
 
     public void sendUserCreatedFlowEvent(UserCreatedFlowEvent event) {
         try {
             String message = objectMapper.writeValueAsString(event);
+            System.out.println("=== ОТПРАВЛЕНО В user-flow === Сообщение: " + message);
             kafkaTemplate.send(USER_FLOW_TOPIC, message);
         } catch (JsonProcessingException e) {
-            throw new RuntimeException("Возникла ошибка при отправке события создания задачи",e);
+            throw new RuntimeException("Возникла ошибка при отправке события регистрации пользователя",e);
         }
     }
 }

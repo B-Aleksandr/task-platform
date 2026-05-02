@@ -22,11 +22,6 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       auto-offset-reset: earliest
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:8080/realms/task-realm
   flyway:
     enabled: true
     baseline-on-migrate: true
@@ -37,3 +32,12 @@ server:
 logging:
   level:
     org.springframework.security: DEBUG
+    org.springframework.kafka.core: DEBUG
+    org.springframework.kafka.producer: DEBUG
+    org.apache.kafka.clients.producer: DEBUG
+    org.apache.kafka.common: INFO
+    org.apache.kafka: INFO
+    org.apache.kafka.clients: INFO
+    org.apache.kafka.clients.consumer: OFF
+    org.springframework.kafka.listener: OFF
+    com.butorin.taskservice.service.KafkaConsumerService: OFF

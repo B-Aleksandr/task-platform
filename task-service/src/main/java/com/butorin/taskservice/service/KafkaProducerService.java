@@ -37,6 +37,7 @@ public class KafkaProducerService {
     public void sendTaskStreamEvent(TaskStreamEvent event) {
         try {
             String message = objectMapper.writeValueAsString(event);
+            System.out.println("=== ОТПРАВЛЕНО В task-stream === Сообщение: " + message);
             kafkaTemplate.send(TASK_STREAM_TOPIC, message);
         } catch (JsonProcessingException e) {
             throw new RuntimeException("Возникла ошибка при отправке события создания задачи",e);
@@ -46,6 +47,7 @@ public class KafkaProducerService {
     public void sendTaskCreatedFlowEvent(TaskCreatedFlowEvent event) {
         try {
             String message = objectMapper.writeValueAsString(event);
+            System.out.println("=== ОТПРАВЛЕНО В task-flow === Сообщение: " + message);
             kafkaTemplate.send(TASK_FLOW_TOPIC, message);
         } catch (JsonProcessingException e) {
             throw new RuntimeException("Возникла ошибка при отправке события создания задачи",e);
