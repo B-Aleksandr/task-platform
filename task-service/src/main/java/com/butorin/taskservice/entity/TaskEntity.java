@@ -17,9 +17,7 @@ public class TaskEntity {
 
     String name;
 
-    @ManyToOne (fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    UserEntity user;
+    private String assigneeId;
 
     String description;
 

@@ -2,15 +2,15 @@ spring:
   application:
     name: auth-service
   datasource:
-    url: jdbc:postgresql://localhost:5432/ordersystem
+    url: jdbc:postgresql://localhost:5432/auth_db
     username: postgres
     password: postgres
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: create-drop
     show-sql: true
   flyway:
-    enabled: true
+    enabled: false
     baseline-on-migrate: true
 
 server:

@@ -2,7 +2,7 @@ spring:
   application:
     name: task-service
   datasource:
-    url: jdbc:postgresql://localhost:5432/ordersystem
+    url: jdbc:postgresql://localhost:5432/task_db
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
@@ -23,7 +23,7 @@ spring:
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       auto-offset-reset: earliest
   flyway:
-    enabled: true
+    enabled: false
     baseline-on-migrate: true
 
 server:

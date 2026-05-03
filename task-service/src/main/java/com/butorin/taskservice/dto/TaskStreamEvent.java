@@ -17,6 +17,6 @@ public class TaskStreamEvent {
     String name;
     String description;
     Status status;
-    Long assigneeId;
+    private String assigneeId;
     LocalDateTime eventTime;
 }

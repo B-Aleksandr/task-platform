@@ -19,6 +19,7 @@ public class KafkaProducerService {
     private static final String TASK_ASSIGNED_TOPIC = "task-assigned";
     private static final String TASK_STREAM_TOPIC = "task-stream";
     private static final String TASK_FLOW_TOPIC = "task-flow";
+    private static final String TASK_COMPLETED_TOPIC = "task-completed";
 
     public void sendTaskCreated(Object task) {
         try {
@@ -29,8 +30,8 @@ public class KafkaProducerService {
         }
     }
 
-    public void sendTaskAssigned(Long taskId, Long userId) {
-        String message = String.format("{\"taskId\":%d,\"userId\":%d}", taskId, userId);
+    public void sendTaskAssigned(Long taskId, String userId) {
+        String message = String.format("{\"taskId\":%d,\"userId\":\"%s\"}", taskId, userId);
         kafkaTemplate.send(TASK_ASSIGNED_TOPIC, message);
     }
 
@@ -53,4 +54,15 @@ public class KafkaProducerService {
             throw new RuntimeException("Возникла ошибка при отправке события создания задачи",e);
         }
     }
+
+    public void sendTaskCompleted(Long taskId, String userId) {
+        String message = String.format("{\"taskId\":%d,\"userId\":\"%s\"}", taskId, userId);
+        kafkaTemplate.send(TASK_COMPLETED_TOPIC, message);
+    }
+
+    public void sendTaskCompletedToFlow(Long taskId, String userId) {
+        String message = String.format("{\"taskId\":%d,\"userId\":\"%s\",\"eventType\":\"COMPLETED\"}", taskId, userId);
+        kafkaTemplate.send("task-flow", message);
+    }
+
 }
