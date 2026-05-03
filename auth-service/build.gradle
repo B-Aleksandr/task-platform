@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.4.4'
     id 'io.spring.dependency-management' version '1.1.7'
+    id 'jacoco'
 }
 
 group = 'com.butorin'
@@ -43,4 +44,38 @@ tasks.withType(Jar) {
 
 tasks.named('test') {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+def jacocoBusinessIncludes = [
+        '**/com/butorin/authservice/controller/**',
+        '**/com/butorin/authservice/service/AuthService.class',
+]
+
+jacocoTestReport {
+    dependsOn test
+    classDirectories.setFrom(files(sourceSets.main.output.classesDirs).collect { dir ->
+        fileTree(dir: dir, includes: jacocoBusinessIncludes)
+    })
+    reports {
+        xml.required = true
+        html.required = true
+    }
+}
+
+jacocoTestCoverageVerification {
+    dependsOn test
+    classDirectories.setFrom(files(sourceSets.main.output.classesDirs).collect { dir ->
+        fileTree(dir: dir, includes: jacocoBusinessIncludes)
+    })
+    violationRules {
+        rule {
+            element = 'BUNDLE'
+            limit {
+                counter = 'LINE'
+                value = 'COVEREDRATIO'
+                minimum = 0.80
+            }
+        }
+    }
 }

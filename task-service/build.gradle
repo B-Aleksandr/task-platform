@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.4.4'
     id 'io.spring.dependency-management' version '1.1.7'
+    id 'jacoco'
 }
 
 group = 'com.butorin'
@@ -26,8 +27,49 @@ dependencies {
     runtimeOnly 'org.flywaydb:flyway-database-postgresql'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'com.h2database:h2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.withType(Jar) {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+def jacocoBusinessIncludes = [
+        '**/com/butorin/taskservice/controller/**',
+        '**/com/butorin/taskservice/service/TaskService.class',
+        '**/com/butorin/taskservice/service/KafkaProducerService.class',
+]
+
+jacocoTestReport {
+    dependsOn test
+    classDirectories.setFrom(files(sourceSets.main.output.classesDirs).collect { dir ->
+        fileTree(dir: dir, includes: jacocoBusinessIncludes)
+    })
+    reports {
+        xml.required = true
+        html.required = true
+    }
+}
+
+jacocoTestCoverageVerification {
+    dependsOn test
+    classDirectories.setFrom(files(sourceSets.main.output.classesDirs).collect { dir ->
+        fileTree(dir: dir, includes: jacocoBusinessIncludes)
+    })
+    violationRules {
+        rule {
+            element = 'BUNDLE'
+            limit {
+                counter = 'LINE'
+                value = 'COVEREDRATIO'
+                minimum = 0.80
+            }
+        }
+    }
 }

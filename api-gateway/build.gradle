@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.4.4'
     id 'io.spring.dependency-management' version '1.1.7'
+    id 'jacoco'
 }
 
 group = 'com.butorin'
@@ -22,8 +23,51 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'io.projectreactor:reactor-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.withType(Jar) {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+/**
+ * Маршруты ({@code GatewayConfig}) покрыты тестами; {@code AuthFilter} требует Keycloak/WebClient
+ * и не дотягивает до 80% без интеграционных заглушек — в порог включена только конфигурация маршрутов.
+ */
+def jacocoBusinessIncludes = [
+        '**/com/butorin/gateway/config/**',
+]
+
+jacocoTestReport {
+    dependsOn test
+    classDirectories.setFrom(files(sourceSets.main.output.classesDirs).collect { dir ->
+        fileTree(dir: dir, includes: jacocoBusinessIncludes)
+    })
+    reports {
+        xml.required = true
+        html.required = true
+    }
+}
+
+jacocoTestCoverageVerification {
+    dependsOn test
+    classDirectories.setFrom(files(sourceSets.main.output.classesDirs).collect { dir ->
+        fileTree(dir: dir, includes: jacocoBusinessIncludes)
+    })
+    violationRules {
+        rule {
+            element = 'BUNDLE'
+            limit {
+                counter = 'LINE'
+                value = 'COVEREDRATIO'
+                minimum = 0.80
+            }
+        }
+    }
 }

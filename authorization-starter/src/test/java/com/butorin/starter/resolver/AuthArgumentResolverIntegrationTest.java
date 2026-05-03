@@ -7,8 +7,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
@@ -130,7 +130,7 @@ class AuthArgumentResolverIntegrationTest {
         return URLEncoder.encode(value, StandardCharsets.UTF_8);
     }
 
-    @SpringBootConfiguration
+    @Configuration
     @EnableAutoConfiguration
     @Import(AuthAutoConfiguration.class)
     static class TestApplication {

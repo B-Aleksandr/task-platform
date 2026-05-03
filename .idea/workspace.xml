@@ -4,53 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="764652b1-ad4a-44d7-ba50-96b7da548125" name="Changes" comment="add authorization-starter with tests and API Gateway integration">
-      <change afterPath="$PROJECT_DIR$/accounting-service/src/main/java/com/butorin/accounting/AccountingServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounting-service/src/main/java/com/butorin/accounting/controller/BalanceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounting-service/src/main/java/com/butorin/accounting/entity/Balance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounting-service/src/main/java/com/butorin/accounting/entity/TaskCompletion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounting-service/src/main/java/com/butorin/accounting/event/PaymentFlowEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounting-service/src/main/java/com/butorin/accounting/event/TaskCompletedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounting-service/src/main/java/com/butorin/accounting/repository/BalanceRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounting-service/src/main/java/com/butorin/accounting/repository/TaskCompletionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounting-service/src/main/java/com/butorin/accounting/service/BalanceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounting-service/src/main/java/com/butorin/accounting/service/PaymentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounting-service/src/main/java/com/butorin/accounting/service/ScheduledRewardService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounting-service/src/main/java/com/butorin/accounting/service/TaskEventConsumer.java" afterDir="false" />
+    <list default="true" id="764652b1-ad4a-44d7-ba50-96b7da548125" name="Changes" comment="add accounting-service with scheduled rewards and Kafka integration">
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounting-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/accounting-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/build/libs/auth-service-0.0.1-SNAPSHOT-plain.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/build/libs/auth-service-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/build/resolvedMainClassName" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/build/tmp/bootJar/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/build/tmp/jar/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-starter/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-starter/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-starter/src/test/java/com/butorin/starter/resolver/AuthArgumentResolverIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-starter/src/test/java/com/butorin/starter/resolver/AuthArgumentResolverIntegrationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/build/classes/java/main/com/butorin/taskservice/controller/TaskController.class" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/build/classes/java/main/com/butorin/taskservice/controller/TaskController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/build/classes/java/main/com/butorin/taskservice/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/build/classes/java/main/com/butorin/taskservice/dto/TaskStreamEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/build/classes/java/main/com/butorin/taskservice/dto/TaskStreamEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/build/classes/java/main/com/butorin/taskservice/dto/UserRequestDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/build/classes/java/main/com/butorin/taskservice/dto/UserResponseDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/build/classes/java/main/com/butorin/taskservice/entity/TaskEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/build/classes/java/main/com/butorin/taskservice/entity/TaskEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/build/classes/java/main/com/butorin/taskservice/entity/UserEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/build/classes/java/main/com/butorin/taskservice/repository/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/build/classes/java/main/com/butorin/taskservice/service/KafkaProducerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/build/classes/java/main/com/butorin/taskservice/service/KafkaProducerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/build/classes/java/main/com/butorin/taskservice/service/TaskService.class" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/build/classes/java/main/com/butorin/taskservice/service/TaskService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/build/classes/java/main/com/butorin/taskservice/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/taskservice/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/taskservice/controller/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/taskservice/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/taskservice/dto/TaskStreamEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/taskservice/dto/TaskStreamEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/taskservice/dto/UserRequestDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/taskservice/dto/UserResponseDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/taskservice/entity/TaskEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/taskservice/entity/TaskEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/taskservice/entity/UserEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/taskservice/repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/taskservice/service/KafkaProducerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/taskservice/service/KafkaProducerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/taskservice/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/taskservice/service/TaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/src/main/java/com/butorin/taskservice/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-service/build/libs/task-service-0.0.1-SNAPSHOT-plain.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-service/build/libs/task-service-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-service/build/resolvedMainClassName" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-service/build/tmp/bootJar/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-service/build/tmp/jar/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-service/src/test/java/com/butorin/taskservice/TaskServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/task-service/src/test/java/com/butorin/taskservice/TaskServiceApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +65,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JavaCoverageOptionsProvider">
+    <option name="myRunnerId" value="jacoco" />
+  </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -105,7 +85,13 @@
     "Downloaded.Files.Path.Enabled": "false",
     "Gradle.AuthArgumentResolverIntegrationTest.executor": "Run",
     "Gradle.AuthControllerRegisterTest.executor": "Run",
+    "Gradle.BalanceControllerTest.executor": "Run",
+    "Gradle.BalanceServiceTest.executor": "Run",
     "Gradle.Build task-platform.executor": "Run",
+    "Gradle.PaymentServiceTest.executor": "Run",
+    "Gradle.ScheduledRewardServiceTest.executor": "Run",
+    "JUnit.All in task-platform.executor": "Coverage",
+    "JUnit.TaskEventConsumerTest,handleTaskCompleted_whenEventTypeCompleted_savesTaskCompletion and 1 more.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -130,7 +116,7 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "settings.editor.selected.configurable": "coverage",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -148,8 +134,8 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.TaskServiceApplication">
-    <configuration name="AuthArgumentResolverIntegrationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="JUnit.All in task-platform">
+    <configuration name="BalanceServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -160,9 +146,9 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":authorization-starter:test" />
+            <option value=":accounting-service:test" />
             <option value="--tests" />
-            <option value="&quot;com.butorin.starter.resolver.AuthArgumentResolverIntegrationTest&quot;" />
+            <option value="&quot;com.butorin.accounting.service.BalanceServiceTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -173,7 +159,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="AuthControllerRegisterTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PaymentServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -184,9 +170,9 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":auth-service:test" />
+            <option value=":accounting-service:test" />
             <option value="--tests" />
-            <option value="&quot;com.butorin.authservice.controller.AuthControllerRegisterTest&quot;" />
+            <option value="&quot;com.butorin.accounting.service.PaymentServiceTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -196,6 +182,52 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>true</RunAsTest>
       <method v="2" />
+    </configuration>
+    <configuration name="ScheduledRewardServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":accounting-service:test" />
+            <option value="--tests" />
+            <option value="&quot;com.butorin.accounting.service.ScheduledRewardServiceTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="All in task-platform" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="task-platform" />
+      <extension name="coverage" runner="jacoco" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskEventConsumerTest,handleTaskCompleted_whenEventTypeCompleted_savesTaskCompletion and 1 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="task-platform.accounting-service.test" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <patterns>
+        <pattern testClass="com.butorin.accounting.service.TaskEventConsumerTest,handleTaskCompleted_whenEventTypeCompleted_savesTaskCompletion" />
+        <pattern testClass="com.butorin.accounting.service.TaskEventConsumerTest,handleTaskCompleted_whenNotCompleted_doesNotSave" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="AccountingServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="task-platform.accounting-service.main" />
@@ -225,10 +257,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Gradle.BalanceServiceTest" />
+      <item itemvalue="Gradle.PaymentServiceTest" />
+      <item itemvalue="Gradle.ScheduledRewardServiceTest" />
+      <item itemvalue="JUnit.All in task-platform" />
+      <item itemvalue="JUnit.TaskEventConsumerTest,handleTaskCompleted_whenEventTypeCompleted_savesTaskCompletion and 1 more" />
+      <item itemvalue="Spring Boot.AccountingServiceApplication" />
+      <item itemvalue="Spring Boot.AuthServiceApplication" />
+      <item itemvalue="Spring Boot.GatewayApplication" />
+      <item itemvalue="Spring Boot.TaskServiceApplication" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.AuthArgumentResolverIntegrationTest" />
-        <item itemvalue="Gradle.AuthControllerRegisterTest" />
+        <item itemvalue="JUnit.All in task-platform" />
+        <item itemvalue="JUnit.TaskEventConsumerTest,handleTaskCompleted_whenEventTypeCompleted_savesTaskCompletion and 1 more" />
+        <item itemvalue="Gradle.ScheduledRewardServiceTest" />
+        <item itemvalue="Gradle.PaymentServiceTest" />
+        <item itemvalue="Gradle.BalanceServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -251,7 +297,8 @@
       <workItem from="1776801159292" duration="4615000" />
       <workItem from="1776880186446" duration="4057000" />
       <workItem from="1777394501952" duration="26922000" />
-      <workItem from="1777741077157" duration="22953000" />
+      <workItem from="1777741077157" duration="25287000" />
+      <workItem from="1777810938044" duration="692000" />
     </task>
     <task id="LOCAL-00001" summary="Add Flyway migrations, replace properties with yml, fix Keycloak DTO">
       <option name="closed" value="true" />
@@ -301,7 +348,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777747048688</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add accounting-service with scheduled rewards and Kafka integration">
+      <option name="closed" value="true" />
+      <created>1777806630733</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1777806630733</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,6 +368,11 @@
     <MESSAGE value="Add migration's" />
     <MESSAGE value="Refactor: replace concatenation with formatted strings in KeycloakAuthService" />
     <MESSAGE value="add authorization-starter with tests and API Gateway integration" />
-    <option name="LAST_COMMIT_MESSAGE" value="add authorization-starter with tests and API Gateway integration" />
+    <MESSAGE value="add accounting-service with scheduled rewards and Kafka integration" />
+    <option name="LAST_COMMIT_MESSAGE" value="add accounting-service with scheduled rewards and Kafka integration" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/task_platform$All_in_task_platform.exec" NAME="All in task-platform Coverage Results" MODIFIED="1777811337557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/task_platform$All_in_task_platform.ic" NAME="All in task-platform Coverage Results" MODIFIED="1777811309496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>
